@@ -111,7 +111,7 @@ def huffman_decode(code, text):
             i = s
         else:
             i=i+1
-    print A
+    return A
     
 huffman_decode(code_H,codedtext_H)
 
