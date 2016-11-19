@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.16)  19 NOV 2016 16:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.16)  19 NOV 2016 17:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -878,31 +878,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--118
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 215--222
+Underfull \hbox (badness 10000) in paragraph at lines 217--224
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--222
+Underfull \hbox (badness 10000) in paragraph at lines 217--224
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 231--238
+Underfull \hbox (badness 10000) in paragraph at lines 233--240
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 231--238
+Underfull \hbox (badness 10000) in paragraph at lines 233--240
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--251
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--251
 
  []
 
 [4] [5] [6] (./huffmanreport.aux) ) 
 Here is how much of TeX's memory you used:
- 14346 strings out of 493089
- 278556 string characters out of 6134842
+ 14354 strings out of 493089
+ 278678 string characters out of 6134842
  327431 words of memory out of 5000000
- 17532 multiletter control sequences out of 15000+600000
+ 17540 multiletter control sequences out of 15000+600000
  12318 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,8n,68p,1006b,741s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -928,7 +938,7 @@ b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.
 pfb>
-Output written on huffmanreport.pdf (6 pages, 224566 bytes).
+Output written on huffmanreport.pdf (6 pages, 225894 bytes).
 PDF statistics:
  110 PDF objects out of 1000 (max. 8388607)
  80 compressed objects within 1 object stream
