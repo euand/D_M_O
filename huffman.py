@@ -3,18 +3,19 @@ Created on Tue Nov  8 18:04:17 2016
 
 @author: euan
 """
+
+from collections import deque
+
 ###########################
 # TASK 1
 ###########################
 
 class Tree:
-    def __init__(self, cargo, left=None, right=None):
-        self.cargo = cargo
+    def __init__(self, freq, char = None, left=None, right=None):
+        self.char = char
+        self.freq = freq
         self.left  = left
         self.right = right
-
-    def __str__(self):
-        return str(self.cargo)
 
 
 def alph_count(text):
@@ -25,23 +26,24 @@ def alph_count(text):
     """
 
     alph = set(text)
-    count = [ (i, text.count(i)) for i in alph ]
+    count = [ (char, text.count(char)) for char in alph ]
     count = sorted(count, key=lambda x: x[1])
-    return map(Tree,count)
+    return [Tree(f, char) for char,f in count]
 
 
 def Huffman_Tree(A):
     """ Creates a Huffman Tree from a given text.
 
-    The function Huffman_Tree is essentially a greedy algorithm that creates
-    a parent node for the two least likely nodes in the sorted list of nodes
+    The function Huffman_Tree is a greedy algorithm that creates a parent
+    node for the two least likely nodes in the sorted list of nodes
     """
 
     while len(A)>1:
-        node = Tree(cargo=('Node', A[0].cargo[1]+A[1].cargo[1]),left=A[0],right=A[1])
-        A=A[2:]
-        A.append(node)
-        A.sort(key=lambda x: x.cargo[1])
+        left, right = A[:2]
+        frequency = left.freq + right.freq
+        A = A[2:]
+        A.append(Tree(frequency, left = left, right = right))
+        A.sort(key=lambda x: x.freq)
     return A[0]
 
 
@@ -52,19 +54,13 @@ def huffman_code(text):
     Huffman Tree
     """
     A = alph_count(text)
-    A = [[Huffman_Tree(A),'']]
-    for i in A:
-        if i[0].left != None:
-            lchild = [i[0].left,i[1]+'0']
-            A.append(lchild)
-        if i[0].right != None:
-            rchild = [i[0].right,i[1]+'1']
-            A.append(rchild)
-    code=[]
-    for i in range(len(A)):
-        if A[i][0].cargo[0] != 'Node':
-            code.append((A[i][1],A[i][0].cargo[0]))
-    return code
+    A = [(Huffman_Tree(A),'')]
+    for node, enc in A:
+        if node.left:
+            A.append((node.left, enc + '0'))
+        if node.right:
+            A.append((node.right, enc + '1'))
+    return [(enc, node.char) for node, enc in A if node.char]
 
 
 def huffman_encode(encoding, text):
