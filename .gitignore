@@ -2,4 +2,4 @@
 *.cache
 *.pyc
 venv
-*.el
+**/*.el
