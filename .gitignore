@@ -2,3 +2,6 @@
 *.cache
 *.pyc
 venv
+auto
+*.log
+*.aux
